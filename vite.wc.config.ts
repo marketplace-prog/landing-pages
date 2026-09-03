@@ -1,7 +1,7 @@
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
 
-const componentName = 'dia-do-cliente'
+const componentName = 'lp-ddc'
 
 export default defineConfig({
   plugins: [vue({ customElement: true })],
@@ -10,7 +10,7 @@ export default defineConfig({
     emptyOutDir: true,
     lib: {
       entry: './wc-entry.ts',
-      name: 'MeuWidget',
+      name: 'DiaDoCliente',
       fileName: componentName
     }
   },

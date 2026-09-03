@@ -2995,5 +2995,5 @@ var eo = { class: "min-h-screen bg-background text-foreground" }, to = {
 		]));
 	}
 }));
-customElements.define("meu-widget", yo);
+customElements.define("dia-do-cliente", yo);
 //#endregion
