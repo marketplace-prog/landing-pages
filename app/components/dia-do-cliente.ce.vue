@@ -14,7 +14,7 @@
             Soluções para montagem e manutenção de quadras para esportes de raquete. Qualidade e rentabilidade para
             condomínios, academias e arenas.
           </p>
-          <a @click="jumpTo('#colecao')"
+          <a @click="(event) => jumpTo(event, '#colecao')"
             class="mt-10 inline-flex items-center gap-3 bg-accent px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition-transform hover:-translate-y-1">
             Ver Ofertas
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -268,10 +268,11 @@ const collections: Array<{
   ]
 
 
-const jumpTo = (to: string) => {
-  const component = this.shadowRoot.querySelector(to);
-  const target = component?.shadowRoot?.querySelector(to);
-  target?.scrollIntoView({ behavior: 'smooth' });
+const jumpTo = (e:Event, to: string) => {
+  e.preventDefault()
+  const element = this.shadowRoot.querySelector(to);
+  // const target = component?.shadowRoot?.querySelector(to);
+  element?.scrollIntoView({ behavior: 'smooth' });
 };
 
 </script>

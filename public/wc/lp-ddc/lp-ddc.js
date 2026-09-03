@@ -2949,8 +2949,8 @@ var eo = "/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */\n@la
 				imageUrl: new URL("/beach-tennis-02.jpg", To).href,
 				highlightText: "57% OFF"
 			}
-		], r = (e) => {
-			(this.shadowRoot.querySelector(e)?.shadowRoot?.querySelector(e))?.scrollIntoView({ behavior: "smooth" });
+		], r = (e, t) => {
+			e.preventDefault(), this.shadowRoot.querySelector(t)?.scrollIntoView({ behavior: "smooth" });
 		};
 		return (e, i) => (bi(), Ti("main", to, [
 			Y("section", no, [Y("div", ro, [Y("div", io, [
@@ -2958,7 +2958,7 @@ var eo = "/*! tailwindcss v4.3.3 | MIT License | https://tailwindcss.com */\n@la
 				i[3] ||= Y("h1", { class: "max-w-xl text-balance font-sans text-6xl font-black uppercase leading-[0.88] tracking-[-0.07em] text-secondary-foreground md:text-8xl" }, [Pi(" Domine a "), Y("span", { class: "text-accent" }, "quadra.")], -1),
 				i[4] ||= Y("p", { class: "mt-8 max-w-md text-pretty text-base leading-7 text-muted-foreground" }, " Soluções para montagem e manutenção de quadras para esportes de raquete. Qualidade e rentabilidade para condomínios, academias e arenas. ", -1),
 				Y("a", {
-					onClick: i[0] ||= (e) => r("#colecao"),
+					onClick: i[0] ||= (e) => r(e, "#colecao"),
 					class: "mt-10 inline-flex items-center gap-3 bg-accent px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition-transform hover:-translate-y-1"
 				}, [...i[1] ||= [Pi(" Ver Ofertas ", -1), Y("svg", {
 					xmlns: "http://www.w3.org/2000/svg",
