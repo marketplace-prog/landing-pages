@@ -94,7 +94,7 @@
           <article v-for="collection in collections" :id="collection.label" class="group">
             <div class="relative aspect-4/5 overflow-hidden bg-muted">
               <img :src="collection.imageUrl" :alt="collection.label"
-                class="size-full object-cover object-center grayscale transition duration-500 group-hover:scale-105">
+                class="size-full object-cover object-center grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0">
               <div class="absolute left-4 top-4 flex gap-2">
                 <span class="bg-accent px-2 py-1 font-mono text-[9px] font-bold uppercase text-accent-foreground">
                   {{ collection.highlightText }}
@@ -110,12 +110,12 @@
                   </path>
                 </svg>
               </button>
-              <button
-                class="absolute bottom-0 left-0 right-0 translate-y-full bg-accent py-4 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-accent-foreground transition-transform group-hover:translate-y-0">
-                Adicionar lote à cotação
-              </button>
+              <a :href="collection.collectionUrl"
+                class="absolute bottom-0 left-0 right-0 translate-y-full bg-accent py-4 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-accent-foreground text-center transition-transform group-hover:translate-y-0">
+                Ver Detalhes
+              </a>
             </div>
-            <div class="flex items-start justify-between gap-4 py-4">
+            <a :href="collection.collectionUrl" class="flex items-start justify-between gap-4 py-4">
               <div>
                 <h3 class="font-sans text-lg font-bold uppercase">
                   {{ collection.label }}
@@ -124,7 +124,7 @@
                   {{ collection.category }}
                 </p>
               </div>
-              <strong class="font-mono text-xs">
+              <strong class="font-mono text-xs text-center">
                 A partir de
                 {{
                   collection.price.toLocaleString('pt-BR', {
@@ -133,7 +133,7 @@
                   })
                 }}
               </strong>
-            </div>
+            </a>
           </article>
 
 
@@ -191,7 +191,8 @@
 <script setup lang="ts">
 
 const BASE_URL = 'https://landing-pages-one-kappa.vercel.app/'
-const isDev = process.env.NODE_ENV === 'dev'
+const isDev = import.meta.env.DEV
+const utmSuffix = '?utm_source=site&utm_medium=backlink_interno&utm_campaign=dia-do-cliente'
 
 
 const categories: Array<{
@@ -201,28 +202,28 @@ const categories: Array<{
 }> = [
     {
       label: 'Tênis',
+      url: 'https://www.fgrsports.com.br/tenis' + utmSuffix,
       imageUrl: isDev
         ? '/tennis-01.jpg'
         : new URL('/tennis-01.jpg', BASE_URL).href,
-      url: '#'
     }, {
       label: 'Padel',
-      url: '#',
+      url: 'https://www.fgrsports.com.br/padel' + utmSuffix,
       imageUrl: isDev
         ? '/padel-01.jpg'
         : new URL('/padel-01.jpg', BASE_URL).href,
     }, {
       label: 'Beach Tennis',
+      url: 'https://www.fgrsports.com.br/beach-tennis' + utmSuffix,
       imageUrl: isDev
         ? '/beach-tennis-01.jpg'
         : new URL('/beach-tennis-01.jpg', BASE_URL).href,
-      url: '#'
     }, {
       label: 'Pickleball',
+      url: 'https://www.fgrsports.com.br/raquete-pickleball-redes-acessorios' + utmSuffix,
       imageUrl: isDev
         ? '/pickleball-01.jpg'
         : new URL('/pickleball-01.jpg', BASE_URL).href,
-      url: '#'
     }
   ]
 
@@ -230,28 +231,38 @@ const collections: Array<{
   label: string;
   category: string;
   imageUrl: string;
+  collectionUrl: string;
   price: number;
   highlightText: string | null;
 }> = [
     {
-      label: 'Kit marcação Quadra de Tênis',
       price: 1990.90,
-      category: 'Monte sua Quadra',
-      imageUrl: '/fgr-hero.jpg',
       highlightText: '57% OFF',
+      category: 'Monte sua Quadra',
+      label: 'Kit marcação Quadra de Tênis',
+      collectionUrl: 'https://www.fgrsports.com.br/kit-fita-de-solo-e-prego-para-quadra-de-tenis-promocional-' + utmSuffix,
+      imageUrl: isDev
+        ? '/fita-e-prego-02.jpg'
+        : new URL('/fita-e-prego-02.jpg', BASE_URL).href,
     },
     {
-      label: 'Raquete Raptor Bee',
       price: 2999.90,
       category: 'Raquetes',
-      imageUrl: '/fgr-hero.jpg',
       highlightText: '17% OFF',
+      label: 'Raquete Raptor Bee',
+      collectionUrl: 'https://www.fgrsports.com.br/raquete-beach-tennis-ama-sport-raptor-bee-carbono-6k' + utmSuffix,
+      imageUrl: isDev
+        ? '/raptor-bee-01.jpg'
+        : new URL('/raptor-bee-01.jpg', BASE_URL).href,
     },
     {
-      label: 'Rede de Beach Tennis Personalizada',
       price: 599.90,
       category: 'Monte sua Quadra',
-      imageUrl: '/fgr-hero.jpg',
+      label: 'Rede de Beach Tennis Personalizada',
+      collectionUrl: 'https://www.fgrsports.com.br/rede-de-beach-tennis-promocional-personalizada' + utmSuffix,
+      imageUrl: isDev
+        ? '/beach-tennis-02.jpg'
+        : new URL('/beach-tennis-02.jpg', BASE_URL).href,
       highlightText: '57% OFF',
     },
   ]
