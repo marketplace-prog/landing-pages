@@ -238,3 +238,7 @@ const collections: Array<{
   ]
 
 </script>
+
+<style>
+  @import "tailwindcss";  
+</style>
