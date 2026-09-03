@@ -14,9 +14,9 @@
             Soluções para montagem e manutenção de quadras para esportes de raquete. Qualidade e rentabilidade para
             condomínios, academias e arenas.
           </p>
-          <a href="#colecao"
+          <a @click="jumpTo('#colecao')"
             class="mt-10 inline-flex items-center gap-3 bg-accent px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition-transform hover:-translate-y-1">
-            Catálogo Atacado
+            Ver Ofertas
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
               stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
               class="lucide lucide-arrow-up-right size-4" aria-hidden="true">
@@ -46,9 +46,9 @@
           </p>
           <h2 class="mt-3 font-sans text-4xl font-black uppercase tracking-tighter">Modalidades</h2>
         </div>
-        <a href="#colecao"
+        <a href="https://www.fgrsports.com.br/dia-do-cliente/#colecao"
           class="hidden font-mono text-[10px] font-bold uppercase tracking-[0.15em] underline underline-offset-4 sm:block">
-          Ver linhas completas
+          Ver Ofertas
         </a>
       </div>
 
@@ -266,6 +266,13 @@ const collections: Array<{
       highlightText: '57% OFF',
     },
   ]
+
+
+const jumpTo = (to: string) => {
+  const component = this.shadowRoot.querySelector(to);
+  const target = component?.shadowRoot?.querySelector(to);
+  target?.scrollIntoView({ behavior: 'smooth' });
+};
 
 </script>
 
