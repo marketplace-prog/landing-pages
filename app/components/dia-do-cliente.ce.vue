@@ -5,7 +5,7 @@
       <div class="mx-auto grid max-w-7xl items-center lg:grid-cols-2">
         <div class="z-10 px-5 py-20 lg:px-10 lg:py-28">
           <p class="mb-6 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-foreground">
-            DIA DO CLIENTE FGR Sports - 2026
+            MES DO CLIENTE FGR Sports - 2026
           </p>
           <h1
             class="max-w-xl text-balance font-sans text-6xl font-black uppercase leading-[0.88] tracking-[-0.07em] text-secondary-foreground md:text-8xl">
@@ -14,21 +14,47 @@
             Soluções para montagem e manutenção de quadras para esportes de raquete. Qualidade e rentabilidade para
             condomínios, academias e arenas.
           </p>
-          <a @click="(event) => jumpTo(event, '#colecao')"
-            class="mt-10 inline-flex items-center gap-3 bg-accent px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition-transform hover:-translate-y-1">
-            Ver Ofertas
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-arrow-up-right size-4" aria-hidden="true">
-              <path d="M7 7h10v10"></path>
-              <path d="M7 17 17 7"></path>
-            </svg>
-          </a>
+
+          <div class="flex flex-row flex-wrap gap-2">
+            <a href="https://www.fgrsports.com.br/beach-tennis"
+              class="mt-10 inline-flex items-center gap-3 bg-accent px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition-transform hover:-translate-y-1">
+              Beach Tennis
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right size-4" aria-hidden="true">
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+
+            <a href="https://www.fgrsports.com.br/tenis"
+              class="mt-10 inline-flex items-center gap-3 bg-accent px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition-transform hover:-translate-y-1">
+              Tênis
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right size-4" aria-hidden="true">
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+
+            <a href="https://www.fgrsports.com.br/outlet"
+              class="mt-10 inline-flex items-center gap-3 bg-accent px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition-transform hover:-translate-y-1">
+              Outlet
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                class="lucide lucide-arrow-up-right size-4" aria-hidden="true">
+                <path d="M7 7h10v10"></path>
+                <path d="M7 17 17 7"></path>
+              </svg>
+            </a>
+          </div>
+
         </div>
         <div class="relative min-h-130 overflow-hidden lg:min-h-170">
           <img src="/fgr-hero.jpg" alt="Atleta FGR Sports jogando padel em ambiente urbano"
             class="absolute inset-0 size-full object-cover object-center grayscale-20">
-          <div class="absolute inset-0 bg-linear-to-r from-secondary via-transparent to-transparent lg:w-2/3">
+          <div class="absolute inset-0 bg-linear-to-b lg:bg-linear-to-r from-secondary via-transparent to-transparent lg:w-2/3">
           </div>
           <span
             class="absolute bottom-8 right-8 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground">O
@@ -42,11 +68,11 @@
       <div class="mb-10 flex items-end justify-between">
         <div>
           <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-            Expanda seu portfólio
+            Conheça nossas
           </p>
           <h2 class="mt-3 font-sans text-4xl font-black uppercase tracking-tighter">Modalidades</h2>
         </div>
-        <a href="https://www.fgrsports.com.br/dia-do-cliente/#colecao"
+        <a :href="'https://www.fgrsports.com.br/outlet' + utmSuffix"
           class="hidden font-mono text-[10px] font-bold uppercase tracking-[0.15em] underline underline-offset-4 sm:block">
           Ver Ofertas
         </a>
@@ -77,15 +103,15 @@
         <div class="mb-10 flex items-end justify-between">
           <div>
             <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
-              Giro Rápido
+              Conheça os
             </p>
             <h2 class="mt-3 font-sans text-4xl font-black uppercase tracking-tighter text-secondary-foreground">
-              Mais Vendidos B2B
+              Mais Vendidos
             </h2>
           </div>
-          <a href="#newsletter"
+          <a :href="'https://www.fgrsports.com.br/outlet' + utmSuffix"
             class="font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-secondary-foreground underline underline-offset-4">
-            Ver tabela de preços
+            Ver ofertas
           </a>
         </div>
 
@@ -150,13 +176,12 @@
           O seu negócio no <span class="text-accent">topo.</span></h2>
       </div>
       <p class="max-w-md text-pretty text-lg leading-8 text-muted-foreground">
-        A FGR Sports é a parceira
-        estratégica definitiva para clubes, lojas e arenas esportivas. Desenvolvemos peças que unem tecnologia e
-        liberdade de movimento, garantindo giro rápido e alta margem para o seu negócio — do saque ao match
-        point.</p>
+        A FGR Sports é a parceira estratégica definitiva para clubes, condomínios, lojas e arenas esportivas.
+        Desenvolvemos produtos que vão muito além do jogo: geram valor real para a sua marca
+      </p>
     </section>
 
-    <section id="newsletter" class="bg-accent px-5 py-16 text-accent-foreground lg:px-10">
+    <!-- <section id="newsletter" class="bg-accent px-5 py-16 text-accent-foreground lg:px-10">
       <div class="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-end">
         <div>
           <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em]">Parceria B2B</p>
@@ -183,7 +208,7 @@
           </button>
         </form>
       </div>
-    </section>
+    </section> -->
 
   </main>
 </template>
@@ -237,7 +262,7 @@ const collections: Array<{
 }> = [
     {
       price: 1990.90,
-      highlightText: '57% OFF',
+      highlightText: '9% OFF',
       category: 'Monte sua Quadra',
       label: 'Kit marcação Quadra de Tênis',
       collectionUrl: 'https://www.fgrsports.com.br/kit-fita-de-solo-e-prego-para-quadra-de-tenis-promocional-' + utmSuffix,
@@ -248,7 +273,7 @@ const collections: Array<{
     {
       price: 2999.90,
       category: 'Raquetes',
-      highlightText: '17% OFF',
+      highlightText: '5% OFF',
       label: 'Raquete Raptor Bee',
       collectionUrl: 'https://www.fgrsports.com.br/raquete-beach-tennis-ama-sport-raptor-bee-carbono-6k' + utmSuffix,
       imageUrl: isDev
@@ -263,17 +288,12 @@ const collections: Array<{
       imageUrl: isDev
         ? '/beach-tennis-02.jpg'
         : new URL('/beach-tennis-02.jpg', BASE_URL).href,
-      highlightText: '57% OFF',
+      highlightText: '20% OFF',
     },
   ]
 
 
-const jumpTo = (e:Event, to: string) => {
-  e.preventDefault()
-  const element = this.shadowRoot.querySelector(to);
-  // const target = component?.shadowRoot?.querySelector(to);
-  element?.scrollIntoView({ behavior: 'smooth' });
-};
+
 
 </script>
 
