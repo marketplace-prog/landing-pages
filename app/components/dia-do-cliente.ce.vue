@@ -238,3 +238,8 @@ const collections: Array<{
   ]
 
 </script>
+
+<style lang="postcss">
+  @import "tailwindcss";
+  @source "./"; /* Escaneia a pasta atual do componente */
+</style>

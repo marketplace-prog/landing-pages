@@ -26,7 +26,10 @@ export default defineConfig({
       fileName: componentName
     }
   },
+
   define: {
     'process.env.NODE_ENV': '"production"'
   },
+
+  cssCodeSplit: false
 })
