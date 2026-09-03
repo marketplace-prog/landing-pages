@@ -55,18 +55,20 @@
       <div class="grid grid-cols-2 gap-3 md:grid-cols-4">
         <a v-for="sport in categories" :href="sport.url"
           class="group relative flex min-h-48 items-end overflow-hidden bg-primary p-5">
-          <span class="font-sans text-2xl font-black uppercase tracking-[-0.06em] text-primary-foreground">
+          <span class="z-10 font-sans text-2xl font-black uppercase tracking-[-0.06em] text-primary-foreground">
             {{ sport.label }}
           </span>
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
             stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-            class="lucide lucide-arrow-up-right absolute right-4 top-4 size-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-accent-foreground"
+            class="z-10 lucide lucide-arrow-up-right absolute right-4 top-4 size-5 transition-transform group-hover:translate-x-1 group-hover:-translate-y-1 text-accent"
             aria-hidden="true">
             <path d="M7 7h10v10"></path>
             <path d="M7 17 17 7"></path>
           </svg>
+          <img :src="sport.imageUrl" :alt="sport.label"
+            class="absolute inset-0 z-0 opacity-25 hover:opacity-35 hover:scale-150 transition ease-in-out duration-700">
         </a>
-        
+
       </div>
     </section>
 
@@ -119,7 +121,7 @@
                   {{ collection.label }}
                 </h3>
                 <p class="mt-1 font-mono text-[10px] uppercase tracking-[0.12em] text-muted-foreground">
-                   {{ collection.category }}
+                  {{ collection.category }}
                 </p>
               </div>
               <strong class="font-mono text-xs">
@@ -134,7 +136,7 @@
             </div>
           </article>
 
-         
+
         </div>
       </div>
     </section>
@@ -188,21 +190,38 @@
 
 <script setup lang="ts">
 
+const BASE_URL = 'https://landing-pages-one-kappa.vercel.app/'
+const isDev = process.env.NODE_ENV === 'dev'
+
+
 const categories: Array<{
   url: string;
+  imageUrl: string;
   label: string;
 }> = [
     {
       label: 'Tênis',
+      imageUrl: isDev
+        ? '/tennis-01.jpg'
+        : new URL('/tennis-01.jpg', BASE_URL).href,
       url: '#'
     }, {
       label: 'Padel',
-      url: '#'
+      url: '#',
+      imageUrl: isDev
+        ? '/padel-01.jpg'
+        : new URL('/padel-01.jpg', BASE_URL).href,
     }, {
       label: 'Beach Tennis',
+      imageUrl: isDev
+        ? '/beach-tennis-01.jpg'
+        : new URL('/beach-tennis-01.jpg', BASE_URL).href,
       url: '#'
     }, {
       label: 'Pickleball',
+      imageUrl: isDev
+        ? '/pickleball-01.jpg'
+        : new URL('/pickleball-01.jpg', BASE_URL).href,
       url: '#'
     }
   ]
@@ -240,5 +259,5 @@ const collections: Array<{
 </script>
 
 <style>
-  @import "tailwindcss";  
+@import "tailwindcss";
 </style>
