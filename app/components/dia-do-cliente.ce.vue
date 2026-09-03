@@ -92,7 +92,7 @@
             <path d="M7 17 17 7"></path>
           </svg>
           <img :src="sport.imageUrl" :alt="sport.label"
-            class="absolute inset-0 z-0 opacity-25 hover:opacity-35 hover:scale-150 transition ease-in-out duration-700">
+            class="absolute size-full object-cover object-center inset-0 z-0 opacity-25 hover:opacity-35 hover:scale-150 transition ease-in-out duration-700">
         </a>
 
       </div>
@@ -120,7 +120,7 @@
           <article v-for="collection in collections" :id="collection.label" class="group">
             <div class="relative aspect-4/5 overflow-hidden bg-muted">
               <img :src="collection.imageUrl" :alt="collection.label"
-                class="size-full object-cover object-center grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0">
+                class="size-full object-cover object-center md:grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0">
               <div class="absolute left-4 top-4 flex gap-2">
                 <span class="bg-accent px-2 py-1 font-mono text-[9px] font-bold uppercase text-accent-foreground">
                   {{ collection.highlightText }}
@@ -137,7 +137,7 @@
                 </svg>
               </button>
               <a :href="collection.collectionUrl"
-                class="absolute bottom-0 left-0 right-0 translate-y-full bg-accent py-4 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-accent-foreground text-center transition-transform group-hover:translate-y-0">
+                class="absolute bottom-0 left-0 right-0 md:translate-y-full bg-accent py-4 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-accent-foreground text-center transition-transform group-hover:translate-y-0 group-focus-visible:translate-y-0 group-active:translate-y-0">
                 Ver Detalhes
               </a>
             </div>
