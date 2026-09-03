@@ -6,6 +6,9 @@ import autoprefixer from 'autoprefixer'
 const componentName = 'lp-ddc'
 
 export default defineConfig({
+
+  base: 'https://landing-pages-one-kappa.vercel.app/',
+
   plugins: [vue({ customElement: true })],
 
   css: {
