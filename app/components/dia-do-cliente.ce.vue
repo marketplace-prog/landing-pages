@@ -5,7 +5,7 @@
       <div class="mx-auto grid max-w-7xl items-center lg:grid-cols-2">
         <div class="z-10 px-5 py-20 lg:px-10 lg:py-28">
           <p class="mb-6 font-mono text-xs font-bold uppercase tracking-[0.25em] text-accent-foreground">
-            MES DO CLIENTE FGR Sports - 2026
+            Mês do cliente FGR Sports 2026
           </p>
           <h1
             class="max-w-xl text-balance font-sans text-6xl font-black uppercase leading-[0.88] tracking-[-0.07em] text-secondary-foreground md:text-8xl">
@@ -57,8 +57,8 @@
           <div class="absolute inset-0 bg-linear-to-b lg:bg-linear-to-r from-secondary via-transparent to-transparent lg:w-2/3">
           </div>
           <span
-            class="absolute bottom-8 right-8 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground">O
-            negócio é vencer.
+            class="absolute bottom-8 right-8 font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-primary-foreground">
+            O negócio é vencer.
           </span>
         </div>
       </div>
@@ -70,7 +70,9 @@
           <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em] text-muted-foreground">
             Conheça nossas
           </p>
-          <h2 class="mt-3 font-sans text-4xl font-black uppercase tracking-tighter">Modalidades</h2>
+          <h2 class="mt-3 font-sans text-4xl font-black uppercase tracking-tighter">
+            Modalidades
+          </h2>
         </div>
         <a :href="'https://www.fgrsports.com.br/outlet' + utmSuffix"
           class="hidden font-mono text-[10px] font-bold uppercase tracking-[0.15em] underline underline-offset-4 sm:block">
