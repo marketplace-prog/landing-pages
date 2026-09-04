@@ -151,7 +151,7 @@
                 </p>
               </div>
               <strong class="font-mono text-xs text-center">
-                A partir de
+                Apenas
                 {{
                   collection.price.toLocaleString('pt-BR', {
                     currency: 'BRL',
@@ -271,14 +271,14 @@ const collections: Array<{
         : new URL('/fita-e-prego-02.jpg', BASE_URL).href,
     },
     {
-      price: 2999.90,
+      price: 2849.41,
       category: 'Raquetes',
-      highlightText: '5% OFF',
+      highlightText: 'Lançamento',
       label: 'Raquete Raptor Bee',
       collectionUrl: 'https://www.fgrsports.com.br/raquete-beach-tennis-ama-sport-raptor-bee-carbono-6k' + utmSuffix,
       imageUrl: isDev
-        ? '/raptor-bee-01.jpg'
-        : new URL('/raptor-bee-01.jpg', BASE_URL).href,
+        ? '/raptor-bee-02.jpg'
+        : new URL('/raptor-bee-02.jpg', BASE_URL).href,
     },
     {
       price: 599.90,
