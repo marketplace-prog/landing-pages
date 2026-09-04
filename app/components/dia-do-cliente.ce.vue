@@ -16,7 +16,7 @@
           </p>
 
           <div class="flex flex-row flex-wrap gap-2">
-            <a href="https://www.fgrsports.com.br/beach-tennis"
+            <a :href="'https://www.fgrsports.com.br/beach-tennis' + utmSuffix"
               class="mt-10 inline-flex items-center gap-3 bg-accent px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition-transform hover:-translate-y-1">
               Beach Tennis
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -27,7 +27,7 @@
               </svg>
             </a>
 
-            <a href="https://www.fgrsports.com.br/tenis"
+            <a :href="'https://www.fgrsports.com.br/tenis' + utmSuffix"
               class="mt-10 inline-flex items-center gap-3 bg-accent px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition-transform hover:-translate-y-1">
               Tênis
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
@@ -38,7 +38,7 @@
               </svg>
             </a>
 
-            <a href="https://www.fgrsports.com.br/outlet"
+            <a :href="'https://www.fgrsports.com.br/outlet' + utmSuffix"
               class="mt-10 inline-flex items-center gap-3 bg-accent px-6 py-4 font-mono text-xs font-bold uppercase tracking-[0.12em] text-accent-foreground transition-transform hover:-translate-y-1">
               Outlet
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
