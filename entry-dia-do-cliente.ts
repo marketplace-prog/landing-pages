@@ -9,4 +9,4 @@ WebComponent.styles = [
 
 const Element = defineCustomElement(WebComponent)
 
-customElements.define('dia-do-cliente', Element)
+customElements.define('mes-do-cliente', Element)

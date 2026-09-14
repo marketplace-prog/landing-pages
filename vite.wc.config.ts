@@ -7,11 +7,10 @@ import { fileURLToPath } from "node:url";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
-
 export default defineConfig({
   root: __dirname,
   base: "https://landing-pages-one-kappa.vercel.app/",
-
+  publicDir: resolve(__dirname, "public"),
   plugins: [vue({ customElement: true })],
 
   css: {
@@ -21,7 +20,7 @@ export default defineConfig({
   },
 
   build: {
-    outDir: resolve(__dirname, "wc/dist"),
+    outDir: resolve(__dirname, "wc"),
     emptyOutDir: true,
     rollupOptions: {
       input: {
@@ -29,11 +28,11 @@ export default defineConfig({
         "top-bar": "./entry-top-bar.ts",
       },
       output: {
-  entryFileNames: "[name].js",
-  chunkFileNames: "shared-[hash].js",
-  assetFileNames: "assets/[name]-[hash][extname]", // hash evita colisão, mas o ponto chave é isolar de path de origem
-  format: "es",
-},
+        entryFileNames: "[name].js",
+        chunkFileNames: "shared-[hash].js",
+        assetFileNames: "assets/[name]-[hash][extname]", // hash evita colisão, mas o ponto chave é isolar de path de origem
+        format: "es",
+      },
     },
   },
 
