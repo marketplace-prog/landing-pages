@@ -1,5 +1,5 @@
 <template>
-    <section class="bg-accent h-6 overflow-hidden w-full fixed top-0 inset-x-0 flex">
+    <section class="bg-accent h-6 overflow-hidden w-full top-0 inset-x-0 flex">
         <div class="absolute h-6 w-5 left-0 top-0 z-10 from-accent via-accent via-20% to-transparent bg-linear-to-r">
         </div>
         <div class="absolute h-6 w-5 right-0 top-0 z-10 from-accent via-accent via-20% to-transparent bg-linear-to-l">
