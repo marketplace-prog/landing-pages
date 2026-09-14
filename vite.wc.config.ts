@@ -1,38 +1,45 @@
-import { defineConfig } from 'vite'
-import vue from '@vitejs/plugin-vue'
-import tailwindcss from '@tailwindcss/postcss'
-import autoprefixer from 'autoprefixer'
+import { defineConfig } from "vite";
+import vue from "@vitejs/plugin-vue";
+import tailwindcss from "@tailwindcss/postcss";
+import autoprefixer from "autoprefixer";
+import { resolve, dirname } from "node:path";
+import { fileURLToPath } from "node:url";
 
-const componentName = 'lp-ddc'
+const __dirname = dirname(fileURLToPath(import.meta.url));
+
 
 export default defineConfig({
-
-  base: 'https://landing-pages-one-kappa.vercel.app/',
+  root: __dirname,
+  base: "https://landing-pages-one-kappa.vercel.app/",
 
   plugins: [vue({ customElement: true })],
 
   css: {
     postcss: {
-      plugins: [
-        tailwindcss(),
-        autoprefixer(),
-      ],
+      plugins: [tailwindcss(), autoprefixer()],
     },
   },
 
   build: {
-    outDir: 'wc/' + componentName,
+    outDir: resolve(__dirname, "wc/dist"),
     emptyOutDir: true,
-    lib: {
-      entry: './wc-entry.ts',
-      name: 'DiaDoCliente',
-      fileName: componentName
-    }
+    rollupOptions: {
+      input: {
+        "dia-do-cliente": "./entry-dia-do-cliente.ts",
+        "top-bar": "./entry-top-bar.ts",
+      },
+      output: {
+  entryFileNames: "[name].js",
+  chunkFileNames: "shared-[hash].js",
+  assetFileNames: "assets/[name]-[hash][extname]", // hash evita colisão, mas o ponto chave é isolar de path de origem
+  format: "es",
+},
+    },
   },
 
   define: {
-    'process.env.NODE_ENV': '"production"'
+    "process.env.NODE_ENV": '"production"',
   },
 
   cssCodeSplit: false,
-})
+});
