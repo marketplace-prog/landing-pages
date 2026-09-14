@@ -24,7 +24,7 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        "dia-do-cliente": "./entry-dia-do-cliente.ts",
+        "dia-do-cliente": "./entry-mes-do-cliente.ts",
         "top-bar": "./entry-top-bar.ts",
       },
       output: {
