@@ -1,8 +1,8 @@
 <template>
-    <section class="bg-primary h-6 overflow-hidden w-full fixed top-0 inset-x-0 flex">
-        <div class="absolute h-6 w-5 left-0 top-0 z-10 from-primary via-primary via-20% to-transparent bg-linear-to-r">
+    <section class="bg-accent h-6 overflow-hidden w-full fixed top-0 inset-x-0 flex">
+        <div class="absolute h-6 w-5 left-0 top-0 z-10 from-accent via-accent via-20% to-transparent bg-linear-to-r">
         </div>
-        <div class="absolute h-6 w-5 right-0 top-0 z-10 from-primary via-primary via-20% to-transparent bg-linear-to-l">
+        <div class="absolute h-6 w-5 right-0 top-0 z-10 from-accent via-accent via-20% to-transparent bg-linear-to-l">
         </div>
         <div class="marquee my-auto">
             <div class="marquee__group">
