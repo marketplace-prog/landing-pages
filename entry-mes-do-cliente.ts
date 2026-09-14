@@ -1,6 +1,6 @@
 import { defineCustomElement } from 'vue'
 import globalCSS from './app/assets/css/main.css?inline'
-import WebComponent from './app/components/dia-do-cliente.ce.vue'
+import WebComponent from './app/components/mes-do-cliente.ce.vue'
 
 WebComponent.styles = [
   globalCSS,
