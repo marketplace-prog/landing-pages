@@ -117,27 +117,17 @@
           </a>
         </div>
 
-        <div class="grid gap-5 md:grid-cols-3">
+        <div class="grid gap-5 md:grid-cols-2">
 
           <article v-for="collection in collections" :id="collection.label" class="group">
-            <div class="relative aspect-4/5 overflow-hidden bg-muted">
+            <div class="relative aspect-square overflow-hidden bg-muted">
               <img :src="collection.imageUrl" :alt="collection.label"
-                class="size-full object-cover object-center md:grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0">
+                class="size-full object-cover object-bottom md:grayscale transition duration-500 group-hover:scale-105 group-hover:grayscale-0">
               <div class="absolute left-4 top-4 flex gap-2">
                 <span class="bg-accent px-2 py-1 font-mono text-[9px] font-bold uppercase text-accent-foreground">
                   {{ collection.highlightText }}
                 </span>
               </div>
-              <button :aria-label="`Adicionar ${collection.label} aos favoritos`"
-                class="absolute right-4 top-4 bg-background/90 p-2">
-                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-                  class="lucide lucide-heart size-4" aria-hidden="true">
-                  <path
-                    d="M2 9.5a5.5 5.5 0 0 1 9.591-3.676.56.56 0 0 0 .818 0A5.49 5.49 0 0 1 22 9.5c0 2.29-1.5 4-3 5.5l-5.492 5.313a2 2 0 0 1-3 .019L5 15c-1.5-1.5-3-3.2-3-5.5">
-                  </path>
-                </svg>
-              </button>
               <a :href="collection.collectionUrl"
                 class="absolute bottom-0 left-0 right-0 md:translate-y-full bg-accent py-4 font-mono text-[10px] font-bold uppercase tracking-[0.15em] text-accent-foreground text-center transition-transform group-hover:translate-y-0 group-focus-visible:translate-y-0 group-active:translate-y-0">
                 Ver Detalhes
@@ -182,35 +172,6 @@
         Desenvolvemos produtos que vão muito além do jogo: geram valor real para a sua marca
       </p>
     </section>
-
-    <!-- <section id="newsletter" class="bg-accent px-5 py-16 text-accent-foreground lg:px-10">
-      <div class="mx-auto flex max-w-7xl flex-col justify-between gap-8 md:flex-row md:items-end">
-        <div>
-          <p class="font-mono text-[10px] font-bold uppercase tracking-[0.2em]">Parceria B2B</p>
-          <h2 class="mt-3 max-w-lg text-balance font-sans text-4xl font-black uppercase leading-none tracking-tighter">
-            Receba nossas tabelas de atacado.
-          </h2>
-        </div>
-
-        <form class="flex w-full max-w-md border-b border-accent-foreground/50">
-          <label class="sr-only" for="email">
-            E-mail corporativo
-          </label>
-          <input id="email" type="email" required="true" placeholder="E-mail do seu negócio"
-            class="min-w-0 flex-1 bg-transparent py-3 font-mono text-xs outline-none placeholder:text-accent-foreground/60"
-            value="">
-          <button aria-label="Receber cotação" class="py-3 font-mono text-[10px] font-bold uppercase tracking-widest">
-            Receber Tabela
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
-              class="lucide lucide-arrow-up-right ml-2 inline size-4" aria-hidden="true">
-              <path d="M7 7h10v10"></path>
-              <path d="M7 17 17 7"></path>
-            </svg>
-          </button>
-        </form>
-      </div>
-    </section> -->
 
   </main>
 </template>
@@ -263,34 +224,84 @@ const collections: Array<{
   highlightText: string | null;
 }> = [
     {
-      price: 1990.90,
-      highlightText: '9% OFF',
-      category: 'Monte sua Quadra',
-      label: 'Kit marcação Quadra de Tênis',
+      price: 1999.90,
+      category: 'Kits Promocionais',
+      label: 'Kit Marcação Quadra de Tênis 150m Fita + 20 kg Prego',
       collectionUrl: 'https://www.fgrsports.com.br/kit-fita-de-solo-e-prego-para-quadra-de-tenis-promocional-' + utmSuffix,
       imageUrl: isDev
-        ? '/fita-e-prego-02.jpg'
-        : new URL('/fita-e-prego-02.jpg', BASE_URL).href,
+        ? '/mes-do-cliente/kit-marcacao.jpg'
+        : new URL('/mes-do-cliente/kit-marcacao.jpg', BASE_URL).href,
+      highlightText: '7% OFF',
     },
     {
-      price: 2849.41,
-      category: 'Raquetes',
-      highlightText: 'Lançamento',
-      label: 'Raquete Raptor Bee',
-      collectionUrl: 'https://www.fgrsports.com.br/raquete-beach-tennis-ama-sport-raptor-bee-carbono-6k' + utmSuffix,
+      price: 1108.23,
+      category: 'Rede de Tênis',
+      label: 'Rede de Tênis Oficial - Classic Personalizada',
+      collectionUrl: 'https://www.fgrsports.com.br/rede-para-quadra-de-tenis-oficial-personalizada-classic' + utmSuffix,
       imageUrl: isDev
-        ? '/raptor-bee-02.jpg'
-        : new URL('/raptor-bee-02.jpg', BASE_URL).href,
+        ? '/mes-do-cliente/rede-beach-tennis-classic.jpg'
+        : new URL('/mes-do-cliente/rede-beach-tennis-classic.jpg', BASE_URL).href,
+      highlightText: '10% OFF',
     },
     {
-      price: 599.90,
-      category: 'Monte sua Quadra',
-      label: 'Rede de Beach Tennis Personalizada',
-      collectionUrl: 'https://www.fgrsports.com.br/rede-de-beach-tennis-promocional-personalizada' + utmSuffix,
+      price: 664.91,
+      category: 'Redes de Beach Tennis',
+      label: 'Rede de Beach Tennis Oficial Personalizada',
+      collectionUrl: 'https://www.fgrsports.com.br/rede-de-beach-tennis-oficial-personalizada' + utmSuffix,
       imageUrl: isDev
-        ? '/beach-tennis-02.jpg'
-        : new URL('/beach-tennis-02.jpg', BASE_URL).href,
+        ? '/mes-do-cliente/rede-beach-tennis.jpg'
+        : new URL('/mes-do-cliente/rede-beach-tennis.jpg', BASE_URL).href,
       highlightText: '20% OFF',
+    },
+    {
+      price: 918.23,
+      category: 'Monte sua Quadra',
+      label: 'Rede de Padel Oficial - Classic Personalizada',
+      collectionUrl: 'https://www.fgrsports.com.br/rede-padel-poliamida-personalizada-' + utmSuffix,
+      imageUrl: isDev
+        ? '/mes-do-cliente/rede-padel.jpg'
+        : new URL('/mes-do-cliente/rede-padel.jpg', BASE_URL).href,
+      highlightText: '12% OFF',
+    },
+    {
+      price: 791.56,
+      category: 'Redes de Tênis',
+      label: 'Rede de Tênis Oficial - Classic',
+      collectionUrl: 'https://www.fgrsports.com.br/rede-de-tenis-oficial-classic' + utmSuffix,
+      imageUrl: isDev
+        ? '/mes-do-cliente/rede-tennis-poliamida.jpg'
+        : new URL('/mes-do-cliente/rede-tennis-poliamida.jpg', BASE_URL).href,
+      highlightText: '27% OFF',
+    },
+    {
+      price: 3799.05,
+      category: 'Acessórios - Tênis',
+      label: 'Rolo Compactador de Saibro para Quadra de Tênis',
+      collectionUrl: 'https://www.fgrsports.com.br/rolo-compressor-para-quadra-de-tenis-saibro' + utmSuffix,
+      imageUrl: isDev
+        ? '/mes-do-cliente/rolo-compactador.jpg'
+        : new URL('/mes-do-cliente/rolo-compactador.jpg', BASE_URL).href,
+      highlightText: '5% OFF',
+    },
+    {
+      price: 843.60,
+      category: 'Acessórios - Tênis',
+      label: 'Vassoura Rotativa para Limpar Linha de Quadra de Tênis',
+      collectionUrl: 'https://www.fgrsports.com.br/vassoura-rotativa-limpa-linha-para-quadra-de-tenis' + utmSuffix,
+      imageUrl: isDev
+        ? '/mes-do-cliente/vassoura-rotativa.jpg'
+        : new URL('/mes-do-cliente/vassoura-rotativa.jpg', BASE_URL).href,
+      highlightText: '11% OFF',
+    },
+    {
+      price: 738.15,
+      category: 'Acessórios - Tênis',
+      label: 'Vassourão 2,0 metros - Para Quadra de Tênis',
+      collectionUrl: 'https://www.fgrsports.com.br/vassourao-para-quadra-de-tenis-200m-angelim-' + utmSuffix,
+      imageUrl: isDev
+        ? '/mes-do-cliente/vassourao-2-mts.jpg'
+        : new URL('/mes-do-cliente/vassourao-2-mts.jpg', BASE_URL).href,
+      highlightText: '14% OFF',
     },
   ]
 
